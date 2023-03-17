@@ -1,0 +1,243 @@
+/* Page Reset */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1920px;
+  height: 1080px;
+  padding: 0 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Setting the display container */
+
+.display-container {
+  display: flex;
+  border: 20px solid grey;
+}
+
+/* The two asides, left and right */
+aside {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  padding: 10px;
+}
+
+/* General styling for videos */
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+/* Overlays for the left and right videos */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.left-aside .video-overlay {
+  color: rgba(132, 189, 1, 255);
+}
+.right-aside .video-overlay {
+  color: rgba(73, 56, 151, 255);
+}
+
+/* The main experience(middle section) */
+
+.main-experience {
+  display: flex;
+}
+
+.tile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 100%;
+  padding: 0 30px;
+  background-color: rgba(170, 170, 170, 1);
+}
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 560px;
+  height: 220px;
+}
+
+.lmax {
+  background-color: rgba(132, 189, 1, 255);
+}
+
+.l649 {
+  background-color: rgba(73, 56, 151, 255);
+}
+
+.dg {
+  background-color: rgba(249, 160, 3, 255);
+}
+
+.scratch {
+  background-color: rgba(128, 128, 128, 255);
+}
+
+/* Takeover video */
+
+#takeover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Ellipses styling */
+
+.circle {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.circle:first-child {
+  background-color: rgba(171, 171, 171, 0.7);
+}
+.circle:nth-child(2) {
+  background-color: rgba(161, 161, 161, 0.6);
+}
+
+/* Stylijg the dollar symbol */
+
+.dollar {
+  font-size: 50px; /* Adjust the font size of the $ sign here */
+  position: relative;
+  top: -0.6em;
+  font-weight: 100;
+  opacity: 0.5;
+}
+
+.value .dollar {
+  top: -1em;
+  font-size: 20px;
+}
+
+/* styling the amount value displayed */
+
+.value {
+  width: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.amount {
+  font-size: 100px;
+  color: white;
+  width: 50%;
+  font-weight: 600;
+  line-height: 0.7;
+}
+
+.value .amount {
+  font-size: 60px;
+  width: 30%;
+  height: auto;
+  font-weight: 600;
+}
+
+.video-overlay .amount {
+  color: inherit;
+}
+
+.value .unit {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.video-overlay .unit {
+  font-size: 60px;
+  font-weight: 600;
+}
+
+/* Keyframes and animations */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.slide-in {
+  animation: slideIn 1s ease-in-out, fadeIn 1s ease-in-out;
+}
+
+.slide-out {
+  animation: slideOut 1s ease-in-out, fadeOut 1s ease-in-out;
+}
